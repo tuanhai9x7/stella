@@ -815,98 +815,95 @@ ul {
       line-height: calc(22 / 16);
     }
   }
-  .utilities-main {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-  }
-  .utilities-nav {
-    width: 100%;
+  .nav-tabs {
+    border: none;
     max-width: 450px;
-    display: flex;
-    flex-direction: column;
-    .nav-tabs {
-      border: none;
-    }
-    .nav-item {
-      flex: 1;
-    }
-    .nav-link {
-      background: #e5e5e5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 0;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: calc(22 / 16);
-      text-align: center;
-      text-transform: uppercase;
-      color: #848484;
-      width: 100%;
-      border: none;
-      height: 70px;
-      margin-bottom: 0;
-      position: relative;
-      padding: 0;
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: 6px;
-        background-color: #fff;
-        display: none;
-      }
-      &.active {
-        background: #b9875d;
-        color: #fff;
-        &::after {
-          display: block;
-        }
-      }
-    }
-    .tab-content {
-      flex: 1;
-      background: #b9875d;
-      display: flex;
-    }
-    .tab-pane {
-      padding: 36px 44px;
-      display: flex;
-      gap: 16px;
-      // &:not(.show) {
-      //   pointer-events: none;
-      //   display: none;
-      // }
-      visibility: hidden;
-      margin-right: -100%;
-      width: 100%;
-      &.active {
-        visibility: visible;
-      }
-      li {
-        line-height: calc(22 / 16);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        white-space: nowrap;
-        margin-bottom: 8px;
-        strong {
-          flex-shrink: 0;
-          font-weight: 700;
-        }
-      }
-    }
+    margin-bottom: -70px;
   }
-  .utilities-img {
+  .nav-item {
     flex: 1;
-    background: #2e110a;
-    padding: 20px 38px;
+  }
+  .nav-link {
+    background: #e5e5e5;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: calc(22 / 16);
+    text-align: center;
+    text-transform: uppercase;
+    color: #848484;
+    width: 100%;
+    border: none;
+    height: 70px;
+    margin-bottom: 0;
+    position: relative;
+    padding: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 6px;
+      background-color: #fff;
+      display: none;
+    }
+    &.active {
+      background: #b9875d;
+      color: #fff;
+      &::after {
+        display: block;
+      }
+    }
+  }
+  .tab-content {
+    background: #2e110a;
+    // display: flex;
+  }
+  .tab-pane {
+    display: flex;
+    // visibility: hidden;
+    // margin-right: -100%;
+    // width: 100%;
+    // &.active {
+    //   visibility: visible;
+    // }
+
+    &:not(.active) {
+      display: none;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 450px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #b9875d;
+      padding: 106px 44px 110px;
+    }
+    li {
+      line-height: calc(22 / 16);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      margin-bottom: 8px;
+      strong {
+        flex-shrink: 0;
+        font-weight: 700;
+      }
+    }
+    .img {
+      flex: 1;
+      padding: 20px 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 .library-block {
@@ -1082,11 +1079,15 @@ ul {
     }
   }
   .utilities-block {
-    .utilities-nav {
-      max-width: 400px;
-      .tab-pane {
-        padding-left: 20px;
-        padding-right: 20px;
+    .nav-tabs {
+      max-width: 100%;
+    }
+    .tab-pane {
+      display: block;
+      .content {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
     }
   }
@@ -1168,16 +1169,12 @@ ul {
         max-width: 100%;
       }
     }
-    .utilities-main {
-      flex-direction: column;
-    }
-    .utilities-nav {
-      max-width: 100%;
-      .nav-link {
-        height: 48px;
-      }
-      .tab-pane {
+
+    max-width: 100%;
+    .tab-pane {
+      .content {
         display: block;
+        padding-bottom: 40px;
       }
     }
   }
