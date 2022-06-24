@@ -475,11 +475,6 @@ ul {
   font-size: 18px;
   line-height: 1.3888888889;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #a06c4e -26.38%, #cf966d 9.67%, #f0cfa0 52.09%, #e0b488 71.7%, #cf966d 96.59%, #a06c4e 130.43%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -487,6 +482,13 @@ ul {
 }
 .location-block .item .title svg {
   flex-shrink: 0;
+}
+.location-block .item .title span {
+  background: linear-gradient(90deg, #a06c4e -26.38%, #cf966d 9.67%, #f0cfa0 52.09%, #e0b488 71.7%, #cf966d 96.59%, #a06c4e 130.43%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 .location-block .item ul {
   padding-left: 20px;
