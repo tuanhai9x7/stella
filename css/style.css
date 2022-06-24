@@ -161,6 +161,8 @@ ul {
   align-items: center;
   gap: 6px;
   padding: 0;
+  outline: none;
+  box-shadow: none;
 }
 .header-block .header-language .dropdown-toggle:hover {
   opacity: 0.7;
@@ -262,13 +264,12 @@ ul {
   padding: 12px 20px;
 }
 .header-menu-mb .header-action {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column-reverse;
-  gap: 24px;
   padding: 0 20px;
   margin-top: 40px;
+}
+.header-menu-mb .header-language {
+  width: fit-content;
+  margin: 24px auto 0;
 }
 .header-menu-mb .header-language .dropdown-toggle {
   background-color: transparent;
@@ -277,6 +278,8 @@ ul {
   align-items: center;
   gap: 6px;
   padding: 0;
+  outline: none;
+  box-shadow: none;
 }
 .header-menu-mb .header-language .dropdown-toggle:hover {
   opacity: 0.7;
@@ -623,16 +626,18 @@ ul {
 .utilities-block .utilities-nav .tab-content {
   flex: 1;
   background: #b9875d;
+  display: flex;
 }
 .utilities-block .utilities-nav .tab-pane {
-  display: flex;
   padding: 36px 44px;
   display: flex;
   gap: 16px;
+  visibility: hidden;
+  margin-right: -100%;
+  width: 100%;
 }
-.utilities-block .utilities-nav .tab-pane:not(.show) {
-  pointer-events: none;
-  display: none;
+.utilities-block .utilities-nav .tab-pane.active {
+  visibility: visible;
 }
 .utilities-block .utilities-nav .tab-pane li {
   line-height: 1.375;
@@ -916,6 +921,10 @@ ul {
     max-width: 100%;
   }
 
+  .position-block .position-img {
+    top: 260px;
+  }
+
   .location-block .location-main {
     grid-template-columns: 1fr;
   }
@@ -929,7 +938,7 @@ ul {
   }
   .project-overview-block .project-overview-container {
     flex-direction: column-reverse;
-    gap: 32px;
+    gap: 32px 0;
   }
   .project-overview-block .project-overview-main {
     max-width: 100%;
